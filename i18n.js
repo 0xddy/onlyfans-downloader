@@ -528,9 +528,10 @@
       footer.replaceChildren(line);
       footer.dataset.ofdlOpenSourceFooter = "";
     }
-    link.textContent = language === "zh_CN"
+    const linkText = language === "zh_CN"
       ? `开源地址：${OPEN_SOURCE_URL}`
       : `Open Source: ${OPEN_SOURCE_URL}`;
+    if (link.textContent !== linkText) link.textContent = linkText;
   }
 
   function applyLanguage(nextLanguage) {
