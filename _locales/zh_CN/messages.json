@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Onlyfans Downloader"
+  },
+  "extensionShortName": {
+    "message": "OFDownloader"
+  },
+  "extensionDescription": {
+    "message": "下载你的 OnlyFans 账号已有权访问的图片和视频。"
+  },
+  "internalCommandDescription": {
+    "message": "内部命令占位符"
+  }
+}

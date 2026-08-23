@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "2.2.2",
+  "short_name": "__MSG_extensionShortName__",
+  "icons": {
+    "16": "/icon/icon-rect-16.png",
+    "48": "/icon/icon-rect-48.png",
+    "128": "/icon/icon-rect-128.png"
+  },
+  "action": {},
+  "commands": {
+    "ofdl:no-op": {
+      "description": "__MSG_internalCommandDescription__"
+    }
+  },
+  "host_permissions": [
+    "*://*.onlyfans.com/*",
+    "*://r2.hlsdownloader.com/*",
+    "*://api.savemydayapp.com/*"
+  ],
+  "permissions": [
+    "cookies",
+    "storage",
+    "scripting",
+    "tabs",
+    "downloads",
+    "downloads.open"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/wasm/*",
+        "assets/opfs-worker*.js",
+        "main-world.js",
+        "icon/icon-rect-48.png",
+        "icon/icon-rounded-rect-48.png"
+      ],
+      "matches": [
+        "*://*.onlyfans.com/*"
+      ]
+    },
+    {
+      "resources": [
+        "content-scripts/content.css"
+      ],
+      "use_dynamic_url": true,
+      "matches": [
+        "*://*.onlyfans.com/*"
+      ]
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlnz7cD79DJSCLoFzkfmHj/gYItqEEj+UiaygHHztXUgNjxWp2qaW4G+QtKzPkbv/f8DM1v4YWt7v0JJJ3WmaP0YlAXsIHmh3fHTlOtCri2KietG8lzQ/Ih/OPEB4BANyAqrkZU00HhIGPBEed979i65T7vtDGW9ViducqCKmXiCowBHE9+sLRErJJXbZTIs1s3ic2D9ioRPCNGAXi1QdWLjcufli30eb5jd5sR6AdrKShpHkBx4jyfq+5uSXJYz8WGsY4zVB+tX0tyt7seoUUtNBJzjCsdASGaii14K/Mf50xMx20hU1kwP2s2QUK9q4QsReVqjlmInAajPacFGmTwIDAQAB",
+  "background": {
+    "type": "module",
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.onlyfans.com/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "i18n.js",
+        "content-scripts/content.js"
+      ],
+      "world": "ISOLATED"
+    }
+  ]
+}

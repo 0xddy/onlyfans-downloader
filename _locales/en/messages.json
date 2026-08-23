@@ -1,0 +1,14 @@
+{
+  "extensionName": {
+    "message": "Onlyfans Downloader"
+  },
+  "extensionShortName": {
+    "message": "OFDownloader"
+  },
+  "extensionDescription": {
+    "message": "Download authorized images and videos from your active OnlyFans subscriptions."
+  },
+  "internalCommandDescription": {
+    "message": "Internal command placeholder"
+  }
+}
